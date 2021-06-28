@@ -48,7 +48,7 @@ func mustClose(c io.Closer) {
 }
 
 func readPackageName(filename string) (string, error) {
-	f, err := os.Open(filename)
+	f, err := os.Open(filepath.Clean(filename))
 	if err != nil {
 		return "", err
 	}
